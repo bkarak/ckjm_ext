@@ -70,7 +70,12 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
     protected void visitJavaClass_body(JavaClass jc) {
         mCase1 = mCase2 = mCase3 = 0;
         mCurrentClass = jc;
-        mParents = jc.getSuperClasses();
+        try {
+            mParents = jc.getSuperClasses();
+        } catch (ClassNotFoundException cnfe) {
+            // TODO: Maybe we could add java.lang.Object by default here
+            mParents = new JavaClass[]{};
+        }
         mParentsMethods = new ArrayList< Method[] >();
         mMethods = jc.getMethods();
         mInvokationsFromParents = new TreeSet<MethodInvokation>();
@@ -105,6 +110,7 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
     @Override
     public void visitMethod( final Method m ){
         MethodGen mg = new MethodGen(m,getParentClassName(), mParentPool);
+
         if (!mg.isAbstract() && !mg.isNative()) {
             for (InstructionHandle ih=mg.getInstructionList().getStart(); ih!=null; ih=ih.getNext()){
                 Instruction i = ih.getInstruction();
@@ -120,8 +126,7 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
                             className = ii.getClassName( mParentPool );
 
                             MethodInvokation mi=new MethodInvokation(className,methodName,args,getParentClassName(),m.getName(),m.getArgumentTypes());
-                            mInvokationsFromParents.add( mi );
-
+                            mInvokationsFromParents.add(mi);
                         }
 
                         @Override

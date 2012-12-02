@@ -104,7 +104,12 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
         ClassMetrics pm = mClassMetricsContainer.getMetrics(super_name);
 
         pm.incNoc();
-        mClassMetrics.setDit(jc.getSuperClasses().length);
+        try {
+            mClassMetrics.setDit(jc.getSuperClasses().length);
+        } catch (ClassNotFoundException cnfe) {
+            // TODO: if no parent classes can be found, then java.lang.Object
+            mClassMetrics.setDit(1);
+        }
         registerCoupling(super_name);
 
         String ifs[] = jc.getInterfaceNames();
