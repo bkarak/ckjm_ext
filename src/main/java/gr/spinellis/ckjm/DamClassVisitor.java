@@ -21,7 +21,7 @@ public class DamClassVisitor extends AbstractClassVisitor {
 
     @Override
     protected void visitJavaClass_body(JavaClass jc) {
-                Field[] fields = jc.getFields();
+        Field[] fields = jc.getFields();
         AccessFlags af;
         double all = fields.length;
         double encapsulated = 0;
