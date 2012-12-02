@@ -312,14 +312,14 @@ public class ClassMetrics {
     }
 
     /**
-     * @return the mIc
+     * @return the Ic
      */
     public int getIc() {
         return mIc;
     }
 
     /**
-     * @param mIc the mIc to set
+     * @param Ic the mIc to set
      */
     public void setIc(int Ic) {
         this.mIc = Ic;
