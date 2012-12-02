@@ -148,9 +148,7 @@ public class MetricsFilter implements ICountingProperities{
      */
     private void runMetricsInternal(String[] files, CkjmOutputHandler outputHandler)
     {
-        
-        for (int i = 0; i < files.length; i++)
-            processClass( files[i] );
+        for (String file : files) { processClass(file); }
 
         mMoaVisitor.end();
         mMetricsContainer.printMetrics(outputHandler);
