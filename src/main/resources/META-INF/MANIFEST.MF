@@ -1,0 +1,1 @@
+Main-Class: gr.spinellis.ckjm.MetricsFilter
