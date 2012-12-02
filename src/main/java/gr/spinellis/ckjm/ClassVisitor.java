@@ -341,9 +341,9 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
          * @param treeWithFields Set of field names that are used direct by the method.
          * @param method Method name. LCOM3 is caunted for this method.
          */
-        Lcom3Counter( TreeSet<String> ts, String method, ArrayList<TreeSetWithId<String>> fieldsUsedByMethods )
+        Lcom3Counter( TreeSet<String> treeWithFields, String method, ArrayList<TreeSetWithId<String>> fieldsUsedByMethods )
         {
-            this.mFieldsNames = ts;
+            this.mFieldsNames = treeWithFields;
             mMethodsNames = new TreeSet<String>();
             mMethodsNames.add( method );
             mFieldsUsedByMethods = fieldsUsedByMethods;
