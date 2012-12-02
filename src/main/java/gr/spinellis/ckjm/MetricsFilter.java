@@ -172,10 +172,10 @@ public class MetricsFilter implements ICountingProperities{
         
         CkjmOutputHandler handler;
         if(cmdParser.isArgSet("x")){
-            handler = new PrintXmlResults(new PrintStream(System.out));
+            handler = new XMLOutputHandler(new PrintStream(System.out));
         }
         else{
-            handler = new PrintPlainResults(System.out);
+            handler = new PlainOutputHandler(System.out);
         }
         
         String[] tmp = new String[1];

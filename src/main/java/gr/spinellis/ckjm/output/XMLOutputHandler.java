@@ -26,11 +26,11 @@ import java.util.List;
  *
  * @author Julien Rentrop
  */
-public class PrintXmlResults implements CkjmOutputHandler {
+public class XMLOutputHandler implements CkjmOutputHandler {
     private PrintStream p;
     private static String endl = System.getProperty("line.separator");
 
-    public PrintXmlResults(PrintStream p) {
+    public XMLOutputHandler(PrintStream p) {
         this.p = p;
     }
 

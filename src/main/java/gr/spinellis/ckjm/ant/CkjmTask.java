@@ -17,9 +17,9 @@
 package gr.spinellis.ckjm.ant;
 
 import gr.spinellis.ckjm.MetricsFilter;
-import gr.spinellis.ckjm.output.PrintPlainResults;
+import gr.spinellis.ckjm.output.PlainOutputHandler;
 
-import gr.spinellis.ckjm.output.PrintXmlResults;
+import gr.spinellis.ckjm.output.XMLOutputHandler;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -152,13 +152,13 @@ public class CkjmTask extends MatchingTask {
                 OutputStream outputStream = new FileOutputStream(mOutputFile);
 
                 if (mFormat.equals("xml")) {
-                    PrintXmlResults outputXml = new PrintXmlResults( new PrintStream(outputStream) );
+                    XMLOutputHandler outputXml = new XMLOutputHandler( new PrintStream(outputStream) );
 
                     outputXml.printHeader();
                     MetricsFilter.runMetrics(files, outputXml, includeJDK);
                     outputXml.printFooter();
                 } else {
-                    PrintPlainResults outputPlain = new PrintPlainResults( new PrintStream(outputStream));
+                    PlainOutputHandler outputPlain = new PlainOutputHandler( new PrintStream(outputStream));
                     MetricsFilter.runMetrics(files, outputPlain, includeJDK);
                 }
                 outputStream.close();

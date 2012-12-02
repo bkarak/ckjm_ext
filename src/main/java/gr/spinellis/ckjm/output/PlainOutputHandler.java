@@ -24,10 +24,10 @@ import java.io.PrintStream;
  * Simple plain text output formatter
  * @author Julien Rentrop
  */
-public class PrintPlainResults implements CkjmOutputHandler {
+public class PlainOutputHandler implements CkjmOutputHandler {
     private PrintStream p;
 
-    public PrintPlainResults (PrintStream p) {
+    public PlainOutputHandler(PrintStream p) {
         this.p = p;
     }
 
