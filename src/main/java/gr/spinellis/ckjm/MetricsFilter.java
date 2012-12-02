@@ -16,7 +16,8 @@
 
 package gr.spinellis.ckjm;
 
-import gr.spinellis.ckjm.ant.PrintXmlResults;
+import gr.spinellis.ckjm.output.PrintXmlResults;
+import gr.spinellis.ckjm.output.CkjmOutputHandler;
 import gr.spinellis.ckjm.utils.CmdLineParser;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import java.util.logging.Level;

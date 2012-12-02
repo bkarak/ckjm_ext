@@ -14,7 +14,9 @@
  * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.output;
+
+import gr.spinellis.ckjm.ClassMetrics;
 
 /**
  * Interface of output handlers

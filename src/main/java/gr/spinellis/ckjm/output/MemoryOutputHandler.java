@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.output;
+
+import gr.spinellis.ckjm.ClassMetrics;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.Map;
  * Output handler, that stores the metrics in memory.
  * @author marian
  */
-public class MemoryOutputHandler implements CkjmOutputHandler{
+public class MemoryOutputHandler implements CkjmOutputHandler {
 
     private Map<String, ClassMetrics> mResults = new HashMap<String, ClassMetrics>();
 

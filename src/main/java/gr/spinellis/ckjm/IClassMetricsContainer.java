@@ -16,6 +16,8 @@
 
 package gr.spinellis.ckjm;
 
+import gr.spinellis.ckjm.output.CkjmOutputHandler;
+
 public interface IClassMetricsContainer{
     public ClassMetrics getMetrics(String name);
     public void printMetrics(CkjmOutputHandler handler);

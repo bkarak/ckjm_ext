@@ -5,6 +5,8 @@
 
 package gr.spinellis.ckjm;
 
+import gr.spinellis.ckjm.output.CkjmOutputHandler;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

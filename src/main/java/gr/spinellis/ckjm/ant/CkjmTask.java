@@ -19,6 +19,7 @@ package gr.spinellis.ckjm.ant;
 import gr.spinellis.ckjm.MetricsFilter;
 import gr.spinellis.ckjm.PrintPlainResults;
 
+import gr.spinellis.ckjm.output.PrintXmlResults;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import java.io.File;
 import java.io.FileOutputStream;
