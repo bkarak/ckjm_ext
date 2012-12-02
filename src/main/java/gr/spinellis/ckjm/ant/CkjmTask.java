@@ -17,7 +17,7 @@
 package gr.spinellis.ckjm.ant;
 
 import gr.spinellis.ckjm.MetricsFilter;
-import gr.spinellis.ckjm.PrintPlainResults;
+import gr.spinellis.ckjm.output.PrintPlainResults;
 
 import gr.spinellis.ckjm.output.PrintXmlResults;
 import gr.spinellis.ckjm.utils.LoggerHelper;

@@ -13,8 +13,9 @@
  * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.output;
 
+import gr.spinellis.ckjm.ClassMetrics;
 import gr.spinellis.ckjm.output.CkjmOutputHandler;
 
 import java.io.PrintStream;
