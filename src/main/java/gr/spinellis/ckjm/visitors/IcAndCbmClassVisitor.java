@@ -3,8 +3,9 @@
  * and open the template in the editor.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.visitors;
 
+import gr.spinellis.ckjm.IClassMetricsContainer;
 import gr.spinellis.ckjm.utils.FieldAccess;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import gr.spinellis.ckjm.utils.MethodCoupling;
@@ -62,7 +63,7 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
     private int mCase3;
 
 
-    IcAndCbmClassVisitor(IClassMetricsContainer classMap){
+    public IcAndCbmClassVisitor(IClassMetricsContainer classMap){
         super(classMap);
     }
 

@@ -3,8 +3,9 @@
  * and open the template in the editor.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.visitors;
 
+import gr.spinellis.ckjm.IClassMetricsContainer;
 import org.apache.bcel.classfile.AccessFlags;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;

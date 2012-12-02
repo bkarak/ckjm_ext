@@ -31,7 +31,7 @@ import java.util.Set;
  * This class also encapsulates some policy decision regarding metrics
  * measurement.
  *
- * @see ClassVisitor
+ * @see gr.spinellis.ckjm.visitors.ClassVisitor
  * @version $Revision: 1.12 $
  * @author <a href="http://www.spinellis.gr">Diomidis Spinellis</a>
  */

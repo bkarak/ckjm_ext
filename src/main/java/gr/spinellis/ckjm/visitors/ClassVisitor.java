@@ -14,8 +14,11 @@
  * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.visitors;
 
+import gr.spinellis.ckjm.ClassMetrics;
+import gr.spinellis.ckjm.IClassMetricsContainer;
+import gr.spinellis.ckjm.ICountingProperities;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import org.apache.bcel.classfile.*;
 import org.apache.bcel.generic.*;
@@ -26,7 +29,7 @@ import java.lang.reflect.Modifier;
 /**
  * Visit a class updating its Chidamber-Kemerer metrics.
  *
- * @see ClassMetrics
+ * @see gr.spinellis.ckjm.ClassMetrics
  * @version $Revision: 1.20 $
  * @author <a href="http://www.spinellis.gr">Diomidis Spinellis</a>
  */

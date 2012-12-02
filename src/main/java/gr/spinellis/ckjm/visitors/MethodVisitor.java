@@ -14,8 +14,9 @@
  * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.visitors;
 
+import gr.spinellis.ckjm.ClassMetrics;
 import org.apache.bcel.generic.*;
 import org.apache.bcel.Constants;
 

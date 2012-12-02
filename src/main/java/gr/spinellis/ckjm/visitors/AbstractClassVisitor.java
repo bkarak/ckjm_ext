@@ -3,8 +3,10 @@
  * and open the template in the editor.
  */
 
-package gr.spinellis.ckjm;
+package gr.spinellis.ckjm.visitors;
 
+import gr.spinellis.ckjm.ClassMetrics;
+import gr.spinellis.ckjm.IClassMetricsContainer;
 import org.apache.bcel.classfile.EmptyVisitor;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.generic.ConstantPoolGen;
