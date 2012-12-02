@@ -45,7 +45,7 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
     private Set< MethodCoupling > mMethodCouplings;
     private JavaClass[] mParents;
     private JavaClass mParent;
-    private String mParentClassName;
+    //private String mParentClassName;
 
     /** How many inheritet methods use a field, that is defined
      *  in a new/redefined method.
