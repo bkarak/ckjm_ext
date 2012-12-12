@@ -151,8 +151,7 @@ public class MetricsFilter implements ICountingProperities{
      * @param files Class files to be analyzed
      * @param outputHandler An implementation of the CkjmOutputHandler interface
      */
-    private void runMetricsInternal(String[] files, CkjmOutputHandler outputHandler)
-    {
+    private void runMetricsInternal(String[] files, CkjmOutputHandler outputHandler) {
         for (String file : files) { processClass(file); }
 
         mMoaVisitor.end();
