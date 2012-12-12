@@ -9,8 +9,7 @@ import java.util.Map;
  * Output handler, that stores the metrics in memory.
  * @author marian
  */
-public class MemoryOutputHandler implements CkjmOutputHandler {
-
+public class MemoryOutputHandler extends CkjmOutputHandler {
     private Map<String, ClassMetrics> mResults = new HashMap<String, ClassMetrics>();
 
     public void handleClass(String name, ClassMetrics c) {

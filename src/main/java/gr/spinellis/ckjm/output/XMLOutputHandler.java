@@ -25,49 +25,48 @@ import java.util.List;
  *
  * @author Julien Rentrop
  */
-public class XMLOutputHandler implements CkjmOutputHandler {
-    private PrintStream p;
-    private static String endl = System.getProperty("line.separator");
+public class XMLOutputHandler extends CkjmOutputHandler {
+    private final static String endl = System.getProperty("line.separator");
 
     public XMLOutputHandler(PrintStream p) {
-        this.p = p;
+        super(p);
     }
 
     public void printHeader() 
     {
-        p.println("<?xml version=\"1.0\"?>");
-        p.println("<ckjm>");
+        this.println("<?xml version=\"1.0\"?>");
+        this.println("<ckjm>");
     }
 
     public void handleClass(String name, ClassMetrics c) 
     {
-        p.println("\t<class>");
-        p.println("\t\t<name>" + name + "</name>");
-        p.println("\t\t<wmc>" + c.getWmc() + "</wmc>");
-        p.println("\t\t<dit>" + c.getDit() + "</dit>");
-        p.println("\t\t<noc>" + c.getNoc() + "</noc>");
-        p.println("\t\t<cbo>" + c.getCbo() + "</cbo>");
-        p.println("\t\t<rfc>" + c.getRfc() + "</rfc>");
-        p.println("\t\t<lcom>" + c.getLcom() + "</lcom>");
-        p.println("\t\t<ca>" + c.getCa() + "</ca>");
-        p.println("\t\t<ce>" + c.getCe() + "</ce>");
-        p.println("\t\t<npm>" + c.getNpm() + "</npm>");
-        p.println("\t\t<lcom3>" + c.getLcom3() + "</lcom3>");
-        p.println("\t\t<loc>" + c.getLoc() + "</loc>");
-        p.println("\t\t<dam>" + c.getDam() + "</dam>");
-        p.println("\t\t<moa>" + c.getMoa() + "</moa>");
-        p.println("\t\t<mfa>" + c.getMfa() + "</mfa>");
-        p.println("\t\t<cam>" + c.getCam() + "</cam>");
-        p.println("\t\t<ic>" + c.getIc() + "</ic>");
-        p.println("\t\t<cbm>" + c.getCbm() + "</cbm>");
-        p.println("\t\t<amc>" + c.getAmc() + "</amc>");
-        p.println(printXmlCC(c));
-        p.println("\t</class>");
+        this.println("\t<class>");
+        this.println("\t\t<name>" + name + "</name>");
+        this.println("\t\t<wmc>" + c.getWmc() + "</wmc>");
+        this.println("\t\t<dit>" + c.getDit() + "</dit>");
+        this.println("\t\t<noc>" + c.getNoc() + "</noc>");
+        this.println("\t\t<cbo>" + c.getCbo() + "</cbo>");
+        this.println("\t\t<rfc>" + c.getRfc() + "</rfc>");
+        this.println("\t\t<lcom>" + c.getLcom() + "</lcom>");
+        this.println("\t\t<ca>" + c.getCa() + "</ca>");
+        this.println("\t\t<ce>" + c.getCe() + "</ce>");
+        this.println("\t\t<npm>" + c.getNpm() + "</npm>");
+        this.println("\t\t<lcom3>" + c.getLcom3() + "</lcom3>");
+        this.println("\t\t<loc>" + c.getLoc() + "</loc>");
+        this.println("\t\t<dam>" + c.getDam() + "</dam>");
+        this.println("\t\t<moa>" + c.getMoa() + "</moa>");
+        this.println("\t\t<mfa>" + c.getMfa() + "</mfa>");
+        this.println("\t\t<cam>" + c.getCam() + "</cam>");
+        this.println("\t\t<ic>" + c.getIc() + "</ic>");
+        this.println("\t\t<cbm>" + c.getCbm() + "</cbm>");
+        this.println("\t\t<amc>" + c.getAmc() + "</amc>");
+        this.println(printXmlCC(c));
+        this.println("\t</class>");
     }
 
     public void printFooter () 
     {
-        p.println("</ckjm>");
+        this.println("</ckjm>");
     }
 
     private String printXmlCC( ClassMetrics cm )

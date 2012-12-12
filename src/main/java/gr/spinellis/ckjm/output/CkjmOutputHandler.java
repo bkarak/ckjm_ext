@@ -18,6 +18,8 @@ package gr.spinellis.ckjm.output;
 
 import gr.spinellis.ckjm.ClassMetrics;
 
+import java.io.PrintStream;
+
 /**
  * Interface of output handlers
  * Use this interface to couple your tool to CKJM. Example implenations
@@ -26,11 +28,35 @@ import gr.spinellis.ckjm.ClassMetrics;
  *
  * @author Julien Rentrop
  */
-public interface CkjmOutputHandler {
+public abstract class CkjmOutputHandler {
+    private PrintStream p;
+
+    protected CkjmOutputHandler(PrintStream p) {
+        this.p = p;
+    }
+
+    protected CkjmOutputHandler() {
+        this.p = null;
+    }
+
+    protected void print(String s) {
+        if (p == null) {
+            System.err.println("PrintStream is not defined!");
+            return;
+        }
+
+        p.print(s);
+    }
+
+    protected void println(String s) {
+        this.print(s);
+        this.print("\n");
+    }
+
     /**
      * Method called when metrics are generated
      * @param name Name of the class
      * @param c Value object that contains the corresponding metrics
      */
-    void handleClass(String name, ClassMetrics c);
+    public abstract void handleClass(String name, ClassMetrics c);
 }

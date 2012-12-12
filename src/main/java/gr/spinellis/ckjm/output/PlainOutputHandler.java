@@ -23,14 +23,12 @@ import java.io.PrintStream;
  * Simple plain text output formatter
  * @author Julien Rentrop
  */
-public class PlainOutputHandler implements CkjmOutputHandler {
-    private PrintStream p;
-
+public class PlainOutputHandler extends CkjmOutputHandler {
     public PlainOutputHandler(PrintStream p) {
-        this.p = p;
+        super(p);
     }
 
     public void handleClass(String name, ClassMetrics c) {
-        p.println(name + " " + c.toString());
+        this.println(name + " " + c.toString());
     }
 }
