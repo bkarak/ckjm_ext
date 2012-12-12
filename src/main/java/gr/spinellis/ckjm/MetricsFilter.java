@@ -16,18 +16,22 @@
 
 package gr.spinellis.ckjm;
 
-import gr.spinellis.ckjm.output.*;
+import gr.spinellis.ckjm.output.CkjmOutputHandler;
+import gr.spinellis.ckjm.output.PlainOutputHandler;
+import gr.spinellis.ckjm.output.XMLOutputHandler;
 import gr.spinellis.ckjm.utils.CmdLineParser;
 import gr.spinellis.ckjm.utils.LoggerHelper;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import gr.spinellis.ckjm.visitors.*;
-import org.apache.bcel.classfile.*;
-import java.io.*;
+import org.apache.bcel.classfile.ClassParser;
+import org.apache.bcel.classfile.JavaClass;
+
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Convert a list of classes into their metrics.

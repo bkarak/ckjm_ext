@@ -1,8 +1,5 @@
 package gr.spinellis.ckjm.visitors;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import gr.spinellis.ckjm.ClassMetrics;
 import gr.spinellis.ckjm.IClassMetricsContainer;
 import org.apache.bcel.classfile.JavaClass;
@@ -10,6 +7,9 @@ import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.ConstantPoolGen;
 import org.apache.bcel.generic.MethodGen;
 import org.apache.bcel.generic.Type;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *

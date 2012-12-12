@@ -14,7 +14,6 @@
  */
 package gr.spinellis.ckjm.output;
 
-import gr.spinellis.ckjm.output.CkjmOutputHandler;
 import gr.spinellis.ckjm.ClassMetrics;
 
 import java.io.PrintStream;

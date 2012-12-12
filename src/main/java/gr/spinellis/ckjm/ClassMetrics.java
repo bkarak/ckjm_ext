@@ -17,13 +17,8 @@
 package gr.spinellis.ckjm;
 
 import gr.spinellis.ckjm.utils.LoggerHelper;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
+import java.util.*;
 
 /**
  * Store details needed for calculating a class's Chidamber-Kemerer metrics.

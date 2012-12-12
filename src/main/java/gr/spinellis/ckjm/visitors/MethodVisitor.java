@@ -17,8 +17,8 @@
 package gr.spinellis.ckjm.visitors;
 
 import gr.spinellis.ckjm.ClassMetrics;
-import org.apache.bcel.generic.*;
 import org.apache.bcel.Constants;
+import org.apache.bcel.generic.*;
 
 
 /**

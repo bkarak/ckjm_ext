@@ -20,11 +20,17 @@ import gr.spinellis.ckjm.ClassMetrics;
 import gr.spinellis.ckjm.IClassMetricsContainer;
 import gr.spinellis.ckjm.ICountingProperities;
 import gr.spinellis.ckjm.utils.LoggerHelper;
-import org.apache.bcel.classfile.*;
-import org.apache.bcel.generic.*;
 import org.apache.bcel.Constants;
-import java.util.*;
+import org.apache.bcel.classfile.Field;
+import org.apache.bcel.classfile.JavaClass;
+import org.apache.bcel.classfile.Method;
+import org.apache.bcel.generic.ArrayType;
+import org.apache.bcel.generic.ConstantPoolGen;
+import org.apache.bcel.generic.MethodGen;
+import org.apache.bcel.generic.Type;
+
 import java.lang.reflect.Modifier;
+import java.util.*;
 
 /**
  * Visit a class updating its Chidamber-Kemerer metrics.

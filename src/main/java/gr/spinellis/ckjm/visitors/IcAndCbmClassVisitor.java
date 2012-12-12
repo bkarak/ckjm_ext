@@ -5,22 +5,12 @@ import gr.spinellis.ckjm.utils.FieldAccess;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import gr.spinellis.ckjm.utils.MethodCoupling;
 import gr.spinellis.ckjm.utils.MethodInvokation;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
-import org.apache.bcel.generic.ConstantPoolGen;
-import org.apache.bcel.generic.FieldInstruction;
-import org.apache.bcel.generic.Instruction;
-import org.apache.bcel.generic.InstructionConstants;
-import org.apache.bcel.generic.InstructionHandle;
-import org.apache.bcel.generic.InvokeInstruction;
-import org.apache.bcel.generic.MethodGen;
-import org.apache.bcel.generic.Type;
+import org.apache.bcel.generic.*;
+
+import java.util.*;
 
 
 /**

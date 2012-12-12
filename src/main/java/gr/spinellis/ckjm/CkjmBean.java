@@ -2,7 +2,8 @@ package gr.spinellis.ckjm;
 
 import gr.spinellis.ckjm.output.CkjmOutputHandler;
 
-import java.beans.*;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 
 /**

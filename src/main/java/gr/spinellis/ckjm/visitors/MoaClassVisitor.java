@@ -1,14 +1,14 @@
 package gr.spinellis.ckjm.visitors;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 import gr.spinellis.ckjm.ClassMetrics;
 import gr.spinellis.ckjm.IClassMetricsContainer;
 import org.apache.bcel.classfile.EmptyVisitor;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *

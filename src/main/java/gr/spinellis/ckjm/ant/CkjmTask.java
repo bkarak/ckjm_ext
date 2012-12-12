@@ -18,19 +18,14 @@ package gr.spinellis.ckjm.ant;
 
 import gr.spinellis.ckjm.MetricsFilter;
 import gr.spinellis.ckjm.output.PlainOutputHandler;
-
 import gr.spinellis.ckjm.output.XMLOutputHandler;
 import gr.spinellis.ckjm.utils.LoggerHelper;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.DirectoryScanner;
 import org.apache.tools.ant.taskdefs.MatchingTask;
 import org.apache.tools.ant.types.Path;
+
+import java.io.*;
 
 /**
  * Ant task definition for the CKJM metrics tool.
