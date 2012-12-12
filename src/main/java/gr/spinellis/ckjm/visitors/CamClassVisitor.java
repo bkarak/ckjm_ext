@@ -17,8 +17,6 @@ import org.apache.bcel.generic.Type;
  */
 public class CamClassVisitor extends AbstractClassVisitor{
 
-    final private String mThis = "this";
-
     public CamClassVisitor(IClassMetricsContainer container) {
         super(container);
     }
@@ -29,6 +27,7 @@ public class CamClassVisitor extends AbstractClassVisitor{
             return result;
         }
         if( !m.isStatic() ){
+            String mThis = "this";
             result.add(mThis);
         }
         MethodGen mg = new MethodGen(m, jc.getClassName(), poolGen);

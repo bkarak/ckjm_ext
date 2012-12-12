@@ -10,7 +10,6 @@ public class MethodCoupling implements Comparable<MethodCoupling>{
     private String mClassB;
     private String mMethodA;
     private String mMethodB;
-    
 
     public MethodCoupling( String classA, String methodA, String classB, String methodB) {
         mClassA = classA;
@@ -27,7 +26,6 @@ public class MethodCoupling implements Comparable<MethodCoupling>{
         }
 
     }
-
 
     @Override
     public String toString(){
