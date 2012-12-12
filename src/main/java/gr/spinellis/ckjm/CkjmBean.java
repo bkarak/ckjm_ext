@@ -1,8 +1,3 @@
-/*
- * CkjmBean.java
- *
- * Created on 26 pazdziernik 2007, 12:52
- */
 package gr.spinellis.ckjm;
 
 import gr.spinellis.ckjm.output.CkjmOutputHandler;

@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package gr.spinellis.ckjm.visitors;
 
 import gr.spinellis.ckjm.IClassMetricsContainer;
@@ -84,7 +79,7 @@ public class IcAndCbmClassVisitor extends AbstractClassVisitor{
         mParentsReaders = new TreeSet<FieldAccess>();
         mCurrentClassSetters = new TreeSet<FieldAccess>();
         mMethodCouplings = new TreeSet<MethodCoupling>();
-        
+
         for( JavaClass j : mParents ){
             mParentPool = new ConstantPoolGen( j.getConstantPool() );
             mParent = j;
