@@ -15,6 +15,7 @@ public class JSONOutputHandler extends CkjmOutputHandler {
     public void handleClass(String name, ClassMetrics c) {
         this.println("[");
 
+
         this.println("]");
     }
 }

@@ -30,7 +30,7 @@
     </dependencies>
 
     <build>
-        <finalName>clmtx</finalName>
+        <finalName>ckjm_ext</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
