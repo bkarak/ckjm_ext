@@ -117,16 +117,13 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
 
         String ifs[] = jc.getInterfaceNames();
         /* Measuring decision: couple interfaces */
-        for (int i = 0; i < ifs.length; i++)
-            registerCoupling(ifs[i]);
+        for (String anIf : ifs) registerCoupling(anIf);
 
         mFields = jc.getFields();
-        for(int i=0; i < mFields.length; i++)
-            mFields[i].accept(this);
+        for (Field mField : mFields) mField.accept(this);
 
         Method[] methods = jc.getMethods();
-        for(int i=0; i < methods.length; i++)
-            methods[i].accept(this);
+        for (Method method : methods) method.accept(this);
     }
 
     /** Add a given class to the classes we are coupled to */
@@ -184,12 +181,10 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
         Type[] argTypes = mg.getArgumentTypes();
 
         registerCoupling(mg.getReturnType());
-        for (int i = 0; i < argTypes.length; i++)
-            registerCoupling(argTypes[i]);
+        for (Type argType : argTypes) registerCoupling(argType);
 
         String[] exceptions = mg.getExceptions();
-        for (int i = 0; i < exceptions.length; i++)
-            registerCoupling(exceptions[i]);
+        for (String exception : exceptions) registerCoupling(exception);
 
         /* Measuring decision: A class'fieldName own methods contribute to its RFC */
         incRFC(getMyClassName(), method.getName(), argTypes);
@@ -363,13 +358,10 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
             
             if( invokedMethods != null )
             {
-                Iterator<String> itr = invokedMethods.iterator();
-                while( itr.hasNext() )
-                {
-                    String name = itr.next();
-                    TreeSet<String> fields = removeInheritedFields( getUsedFieldsByMethodName( name ) );
-                    if( fields != null )
-                        this.mFieldsNames.addAll( fields );
+                for (String name : invokedMethods) {
+                    TreeSet<String> fields = removeInheritedFields(getUsedFieldsByMethodName(name));
+                    if (fields != null)
+                        this.mFieldsNames.addAll(fields);
                 }
             }
         }
@@ -402,9 +394,9 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
         
         private TreeSet<String> getByMethodName( String name, ArrayList<TreeSetWithId<String>> m )
         {
-            for( int i=0; i<m.size(); i++ )
-                if( m.get(i).getId().compareTo( name ) == 0 )
-                    return m.get(i);
+            for (TreeSetWithId<String> aM : m)
+                if (aM.getId().compareTo(name) == 0)
+                    return aM;
             return null;
         }
     }
