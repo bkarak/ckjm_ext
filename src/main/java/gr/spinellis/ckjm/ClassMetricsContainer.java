@@ -41,12 +41,14 @@ public class ClassMetricsContainer implements IClassMetricsContainer {
         Set<Map.Entry<String, ClassMetrics>> entries = m.entrySet();
         Iterator<Map.Entry<String, ClassMetrics>> i;
 
+        handler.header();
         for (i = entries.iterator(); i.hasNext(); ) {
             Map.Entry<String, ClassMetrics> e = i.next();
             ClassMetrics cm = e.getValue();
             if (cm.isVisited() && (prop.includeAll() || cm.isPublic()))
             handler.handleClass(e.getKey(), cm);
         }
+        handler.footer();
     }
 
     public ClassMetricsContainer(ICountingProperities cp)

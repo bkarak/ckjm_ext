@@ -59,4 +59,8 @@ public abstract class CkjmOutputHandler {
      * @param c Value object that contains the corresponding metrics
      */
     public abstract void handleClass(String name, ClassMetrics c);
+
+    public abstract void header();
+
+    public abstract void footer();
 }

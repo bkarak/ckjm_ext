@@ -183,7 +183,6 @@ public class MetricsFilter implements ICountingProperities{
         
         String[] tmp = new String[1];
         mf.runMetricsInternal( cmdParser.getClassNames().toArray(tmp), handler );
-
     }
 
 

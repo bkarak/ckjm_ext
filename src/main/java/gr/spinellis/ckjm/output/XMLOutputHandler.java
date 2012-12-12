@@ -32,8 +32,7 @@ public class XMLOutputHandler extends CkjmOutputHandler {
         super(p);
     }
 
-    public void printHeader() 
-    {
+    public void header() {
         this.println("<?xml version=\"1.0\"?>");
         this.println("<ckjm>");
     }
@@ -64,8 +63,7 @@ public class XMLOutputHandler extends CkjmOutputHandler {
         this.println("\t</class>");
     }
 
-    public void printFooter () 
-    {
+    public void footer () {
         this.println("</ckjm>");
     }
 
