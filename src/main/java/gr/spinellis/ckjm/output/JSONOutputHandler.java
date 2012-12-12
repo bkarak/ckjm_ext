@@ -13,6 +13,8 @@ public class JSONOutputHandler extends CkjmOutputHandler {
 
     @Override
     public void handleClass(String name, ClassMetrics c) {
+        this.println("[");
 
+        this.println("]");
     }
 }

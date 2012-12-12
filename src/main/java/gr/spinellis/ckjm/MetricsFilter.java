@@ -17,6 +17,7 @@
 package gr.spinellis.ckjm;
 
 import gr.spinellis.ckjm.output.CkjmOutputHandler;
+import gr.spinellis.ckjm.output.JSONOutputHandler;
 import gr.spinellis.ckjm.output.PlainOutputHandler;
 import gr.spinellis.ckjm.output.XMLOutputHandler;
 import gr.spinellis.ckjm.utils.CmdLineParser;
@@ -164,12 +165,12 @@ public class MetricsFilter implements ICountingProperities{
     public static void main(String[] argv) {
         MetricsFilter mf = new MetricsFilter();
         CmdLineParser cmdParser = new CmdLineParser();
-        
         cmdParser.parse(argv);
 
         if (cmdParser.isArgSet("s")) {
             mf.mIncludeJdk = true;
         }
+
         if (cmdParser.isArgSet("p")) {
             mf.mOnlyPublic = true;
         }
@@ -177,10 +178,9 @@ public class MetricsFilter implements ICountingProperities{
         CkjmOutputHandler handler;
         if(cmdParser.isArgSet("x")){
             handler = new XMLOutputHandler(new PrintStream(System.out));
-        }
-        else{
-            handler = new PlainOutputHandler(System.out);
-        }
+        } else if (cmdParser.isArgSet("j")) {
+            handler = new JSONOutputHandler(new PrintStream(System.out));
+        } else{ handler = new PlainOutputHandler(System.out); }
         
         String[] tmp = new String[1];
         mf.runMetricsInternal( cmdParser.getClassNames().toArray(tmp), handler );
