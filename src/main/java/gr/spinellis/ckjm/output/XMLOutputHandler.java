@@ -67,8 +67,7 @@ public class XMLOutputHandler extends CkjmOutputHandler {
         this.println("</ckjm>");
     }
 
-    private String printXmlCC( ClassMetrics cm )
-    {
+    private String printXmlCC( ClassMetrics cm ) {
         StringBuilder xmlCC = new StringBuilder();
         List<String> methodNames = cm.getMethodNames();
         Iterator<String> itr = methodNames.iterator();

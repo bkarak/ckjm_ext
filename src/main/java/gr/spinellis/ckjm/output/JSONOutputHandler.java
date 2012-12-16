@@ -17,9 +17,7 @@ public class JSONOutputHandler extends CkjmOutputHandler {
         jsonDocument = new JSONArray();
     }
 
-    public void header() {
-
-    }
+    public void header() {}
 
     public void footer() {
         try {

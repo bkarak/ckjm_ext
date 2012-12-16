@@ -227,7 +227,7 @@ public class ClassMetrics {
     {
         LinkedList<String> methodNames = new LinkedList<String>();
         
-        Set<String> mNames=mMapCyclomaticComlpexity.keySet();
+        Set<String> mNames = mMapCyclomaticComlpexity.keySet();
         Iterator<String> itr = mNames.iterator();
         while( itr.hasNext() )
             methodNames.add( itr.next() );
@@ -252,7 +252,7 @@ public class ClassMetrics {
             return;
         
         signature = signature.split("\n")[0]; //removes throws ExceptionName from the signature
-        mMapCyclomaticComlpexity.put(signature, new Integer(cc) );
+        mMapCyclomaticComlpexity.put(signature, cc);
     }
 
     public void setDam(double a) {
