@@ -34,20 +34,52 @@ public class JSONOutputHandler extends CkjmOutputHandler {
 
     @Override
     public void handleClass(String name, ClassMetrics c) {
+        String filename = name.replace(".", "/") + ".java";
+
         // The big object
         JSONObject jsonobj = new JSONObject();
 
         jsonobj.put("id", name);
-        jsonobj.put("filename", name.replace(".", "/") + ".class");
+        jsonobj.put("filename", filename);
         jsonobj.put("category", "class");
 
         JSONArray measArray = new JSONArray();
 
         // Measurements
-
-
+        measArray.add(createMeasInt("WeightedMethodsPerClass", c.getWmc()));
+        measArray.add(createMeasInt("DepthOfInheritanceTree", c.getDit()));
+        measArray.add(createMeasInt("NumberOfChildren", c.getNoc()));
+        measArray.add(createMeasInt("CouplingBetweenObjects", c.getCbo()));
+        measArray.add(createMeasInt("ResponseForClass", c.getRfc()));
+        measArray.add(createMeasInt("LackOfCohesionInMethods", c.getLcom()));
+        measArray.add(createMeasInt("AfferentCouplings", c.getCa()));
+        measArray.add(createMeasInt("EfferentCouplings", c.getCe()));
+        measArray.add(createMeasInt("NumberOfPublicMethods", c.getNpm()));
+        measArray.add(createMeasDouble("LackOfCohesionInMethods3", c.getLcom3()));
+        measArray.add(createMeasInt("LinesOfCode", c.getLoc()));
+        measArray.add(createMeasDouble("DataAccessMetric", c.getDam()));
+        measArray.add(createMeasInt("MeasureOfAggregation", c.getMoa()));
+        measArray.add(createMeasDouble("MeasureOfFunctionalAbstraction", c.getMfa()));
+        measArray.add(createMeasDouble("CohesionAmongMethodsOfClass", c.getCam()));
+        measArray.add(createMeasInt("InheritanceCoupling", c.getIc()));
+        measArray.add(createMeasInt("CouplingBetweenMethods", c.getCbm()));
+        measArray.add(createMeasDouble("AverageMethodComplexity", c.getAmc()));
 
         jsonobj.put("measurement", measArray);
+
+        for (String mname : c.getMethodNames()) {
+            JSONObject mobj = new JSONObject();
+
+            mobj.put("id", mname);
+            mobj.put("filename", filename);
+            mobj.put("category", "method");
+
+            JSONArray marray = new JSONArray();
+            marray.add(createMeasInt("McCabe", c.getCC(mname)));
+            mobj.put("measuremnt", marray);
+
+            jsonDocument.add(mobj);
+        }
 
         jsonDocument.add(jsonobj);
     }
@@ -74,24 +106,6 @@ public class JSONOutputHandler extends CkjmOutputHandler {
 }
 
 /*
-        this.println("\t<class>");
-        this.println("\t\t<name>" + name + "</name>");
-        this.println("\t\t<wmc>" + c.getWmc() + "</wmc>");
-        this.println("\t\t<dit>" + c.getDit() + "</dit>");
-        this.println("\t\t<noc>" + c.getNoc() + "</noc>");
-        this.println("\t\t<cbo>" + c.getCbo() + "</cbo>");
-        this.println("\t\t<rfc>" + c.getRfc() + "</rfc>");
-        this.println("\t\t<lcom>" + c.getLcom() + "</lcom>");
-        this.println("\t\t<ca>" + c.getCa() + "</ca>");
-        this.println("\t\t<ce>" + c.getCe() + "</ce>");
-        this.println("\t\t<npm>" + c.getNpm() + "</npm>");
-        this.println("\t\t<lcom3>" + c.getLcom3() + "</lcom3>");
-        this.println("\t\t<loc>" + c.getLoc() + "</loc>");
-        this.println("\t\t<dam>" + c.getDam() + "</dam>");
-        this.println("\t\t<moa>" + c.getMoa() + "</moa>");
-        this.println("\t\t<mfa>" + c.getMfa() + "</mfa>");
-        this.println("\t\t<cam>" + c.getCam() + "</cam>");
-        this.println("\t\t<ic>" + c.getIc() + "</ic>");
         this.println("\t\t<cbm>" + c.getCbm() + "</cbm>");
         this.println("\t\t<amc>" + c.getAmc() + "</amc>");
         this.println(printXmlCC(c));
