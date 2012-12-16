@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * XML output formatter
  *
- * @author Julien Rentrop
+ * @author Julien Rentrop, Vassilios Karakoidas (vassilios.karakoidas@gmail.com)
  */
 public class XMLOutputHandler extends CkjmOutputHandler {
     private final static String endl = System.getProperty("line.separator");

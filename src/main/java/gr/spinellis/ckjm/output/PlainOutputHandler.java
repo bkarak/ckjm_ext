@@ -28,6 +28,9 @@ public class PlainOutputHandler extends CkjmOutputHandler {
         super(p);
     }
 
+    public void header() {}
+    public void footer() {}
+
     public void handleClass(String name, ClassMetrics c) {
         this.println(name + " " + c.toString());
     }
