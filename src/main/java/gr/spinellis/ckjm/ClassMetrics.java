@@ -264,9 +264,8 @@ public class ClassMetrics {
     }
 
     /** Return description of CC metrics */
-    private String printPlainCC() 
-    {
-        StringBuffer plainCC = new StringBuffer();
+    private String printPlainCC() {
+        StringBuilder plainCC = new StringBuilder();
         List<String> methodNames = getMethodNames();
         Iterator<String> itr=methodNames.iterator();
         String name;
@@ -274,7 +273,7 @@ public class ClassMetrics {
         while(itr.hasNext())
         {
             name = itr.next();
-            plainCC.append(" ~ " + name + ": ");
+            plainCC.append(" ~ ").append(name).append(": ");
             plainCC.append(getCC(name));
             plainCC.append(endl);
         }
