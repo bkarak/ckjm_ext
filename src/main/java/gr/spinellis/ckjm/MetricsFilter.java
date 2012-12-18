@@ -48,7 +48,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.9 $
  * @author <a href="http://www.spinellis.gr">Diomidis Spinellis</a>
  */
-public class MetricsFilter implements ICountingProperities{
+public class MetricsFilter implements ICountingProperties {
     /** True if the measurements should include calls to the Java JDK into account */
     private boolean mIncludeJdk = false;
 

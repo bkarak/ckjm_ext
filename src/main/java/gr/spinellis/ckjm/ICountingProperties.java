@@ -4,7 +4,7 @@ package gr.spinellis.ckjm;
  *
  * @author marian
  */
-public interface ICountingProperities
+public interface ICountingProperties
 {
     /** Return true if the measurements should include calls to the Java JDK into account */
     public boolean isJdkIncluded();

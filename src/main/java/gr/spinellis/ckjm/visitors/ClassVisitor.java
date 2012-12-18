@@ -18,7 +18,7 @@ package gr.spinellis.ckjm.visitors;
 
 import gr.spinellis.ckjm.ClassMetrics;
 import gr.spinellis.ckjm.IClassMetricsContainer;
-import gr.spinellis.ckjm.ICountingProperities;
+import gr.spinellis.ckjm.ICountingProperties;
 import gr.spinellis.ckjm.utils.LoggerHelper;
 import org.apache.bcel.Constants;
 import org.apache.bcel.classfile.Field;
@@ -41,7 +41,7 @@ import java.util.*;
  */
 public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
     
-    private ICountingProperities mProp=null;
+    private ICountingProperties mProp=null;
     /** The class being visited. */
     private JavaClass mVisitedClass;
     /** The class'fieldName constant pool. */
@@ -78,7 +78,7 @@ public class ClassVisitor extends org.apache.bcel.classfile.EmptyVisitor {
     /** Class fields */
     private Field[] mFields;
     
-    public ClassVisitor(JavaClass jc, IClassMetricsContainer classMap, ICountingProperities prop) {
+    public ClassVisitor(JavaClass jc, IClassMetricsContainer classMap, ICountingProperties prop) {
         if( prop==null ) throw new RuntimeException( "CountingProperties cannot be null" );
         mProp = prop;
         mVisitedClass = jc;

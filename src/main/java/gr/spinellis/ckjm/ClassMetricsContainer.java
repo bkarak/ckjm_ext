@@ -22,7 +22,7 @@ public class ClassMetricsContainer implements IClassMetricsContainer {
     /** The map from class names to the corresponding metrics */
     private HashMap<String, ClassMetrics> m = new HashMap<String, ClassMetrics>();
 
-    private ICountingProperities prop=null;
+    private ICountingProperties prop=null;
 
     /** Return a class's metrics
      * @name Name of class. Metrics of the class are stored in coreponding ClassMetric object.
@@ -51,7 +51,7 @@ public class ClassMetricsContainer implements IClassMetricsContainer {
         handler.footer();
     }
 
-    public ClassMetricsContainer(ICountingProperities cp)
+    public ClassMetricsContainer(ICountingProperties cp)
     {
         if( cp==null )  throw new RuntimeException( "CountingProperties cannot be null" );
         prop = cp;
